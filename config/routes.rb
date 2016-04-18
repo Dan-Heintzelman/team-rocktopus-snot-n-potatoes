@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
 
+
   resources :movies do
     resources :reviews, only: :index
   end
 
   root 'movies#index'
+
+
+ get 'login' => 'session#new'
+ post 'login' => 'session#create'
+ delete 'logout' => 'session#destroy'
+
+ resources :users, except: [:destroy]
 
 end
 
