@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	has_many :reviews
-	has_many :roovies, through: :reviews, source: :movies
+	has_many :reviewed_movies, through: :reviews, source: :movie
 
 	has_many :favorites
-	has_many :foovies, through: :favorites, source: :movies
+	has_many :favorited_movies, through: :favorites, source: :movie
 
 	has_many :votes
-	has_many :voted, through: :votes, source: :reviews
+	has_many :voted_reviews, through: :votes, source: :review
 end
