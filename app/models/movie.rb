@@ -4,4 +4,6 @@ class Movie < ActiveRecord::Base
   has_many :favoriters, through: :favorites, source: :user
   has_many :reviewers, through: :reviews, source: :user
 
+  validates_presence_of :title
+
 end
