@@ -8,11 +8,11 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://image.tmdb.org/t/p/w500/<%= @movie.featured[0].photo_path%>" alt="Image">
+        <img src="https://image.tmdb.org/t/p/w500/<%= @featured[0].photo_path%>" alt="Image">
         <!-- <img src="http://placehold.it/200x300?text=IMAGE" alt="Image"> -->
         <div class="carousel-caption">
-          <h3><%= @featured[0].title%></h3>
-          <p><%=@featured[0].tagline%></p>
+          <h3><%= @featured[0].title %></h3>
+          <p><%= @featured[0].tagline %></p>
         </div>
       </div>
 
