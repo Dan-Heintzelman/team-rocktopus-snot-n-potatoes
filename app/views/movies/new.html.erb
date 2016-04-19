@@ -1,1 +1,12 @@
+<h1>Add New Moooooovie Yo</h1>
 
+<div class="movie-form">
+  <%= form_for :movie, url: movies_path do |f| %>
+
+  <%= f.label "imdb_id" %>
+  <%= f.text_field "imdb_id" %>
+
+  <%= f.submit "Do it" %>
+
+  <% end %>
+</div>
