@@ -23,4 +23,15 @@ class Movie < ActiveRecord::Base
     return featured
   end
 
+  def average_rating
+    reviews = self.reviews
+    sum = 0
+    reviews.each do |review|
+      sum += review.rating
+    end
+
+    return sum / reviews.length
+    
+  end
+
 end
