@@ -45,10 +45,10 @@
   <h3>Top Movies</h3><br>
   <div class="row">
 
-    <% for i in 0..3  %>
+    <% @highest.each do |mov| %>
       <div class="col-sm-3">
-        <p>Some text..</p>
-        <a href="/movies/<%= @movies[i].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@movies[i].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
+        <p><%= mov.title%></p>
+        <a href="/movies/<%= mov.id %>"><img src="https://image.tmdb.org/t/p/w500/<%= mov.photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
       </div>
     <% end %>
 

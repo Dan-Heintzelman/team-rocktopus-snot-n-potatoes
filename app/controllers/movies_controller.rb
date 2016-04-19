@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @highest = Movie.highest_rated
     @trending = Movie.trending
     @featured = Movie.featured
     rando = random_genre
