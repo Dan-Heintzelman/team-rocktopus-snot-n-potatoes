@@ -26,8 +26,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'shoulda-matchers'
+
+# Add frontend frameworks here (bootstrap/react)
+gem 'react-rails', '~> 1.6.0'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'jquery-ui-rails'
+
+
 gem 'imdb', '~> 0.8'
+
 
 
 # Use Unicorn as the app server
@@ -42,7 +50,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'byebug'
-
+  gem 'shoulda-matchers'
+  gem 'shoulda'
 end
 
 group :development do
