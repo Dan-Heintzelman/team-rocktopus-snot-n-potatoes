@@ -11,7 +11,7 @@
         <h1 class="text-center"><%=@movie.title%></h1>
         <h3>Hot Pototatoe or Snot Potatoe?</h3>
         <ul>
-          <li>Number of Users Favorited:</li>
+          <li>Number of Users Favorited: <%=@movie.favorites.length%></li></li>
           <li>
           <% if in_favorites?(current_user, @movie.id) %>
             <%= button_to "Unfavorite", {:controller => "favorites", :action => "destroy", :movie_id => @movie.id, :user => current_user}, :method=>:delete %>
@@ -19,10 +19,13 @@
             <%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %>
           <% end %>
           </li>
-          <li>Number of Reviews:</li>
-          <li>Average Rating:
-          <!-- Insert logic here -->
+          <li>Average Rating: <%=@movie.average_rating%>
+            <% @movie.average_rating.times do %>
+            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+            <% end %>
           </li>
+          <li>Number of Reviews: <%=@movie.reviews.length%></li>
+
         </ul>
         <h3>Movie Details</h3>
         <ul>
