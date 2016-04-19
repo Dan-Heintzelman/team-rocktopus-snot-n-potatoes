@@ -41,10 +41,11 @@
     <div class="well col-sm-12 ">
       <h3 class="text-center">Reviews</h3>
       <ul class="text-left">
+        <li><%= render partial:"reviews/new", locals: {review: review}%></li>
+        <% @movie.reviews.each do |review| %>
+        <li><%= %></li>
+        <% end %>
         <li>Review1</li>
-        <li>Review2</li>
-        <li>Review3</li>
-        <li>Review4</li>
       </ul>
     </div>
     <!-- <div class=" col-sm-2">

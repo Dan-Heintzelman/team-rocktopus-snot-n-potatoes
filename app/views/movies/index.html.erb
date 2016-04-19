@@ -8,16 +8,16 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://image.tmdb.org/t/p/w500/<%=@featured_movies[0].photo_path%>" alt="Image">
+        <img src="https://image.tmdb.org/t/p/w500/<%=@featured[0].photo_path%>" alt="Image">
         <!-- <img src="http://placehold.it/200x300?text=IMAGE" alt="Image"> -->
         <div class="carousel-caption">
-          <h3><%= @featured_movies[0].title%></h3>
-          <p><%=@featured_movies[0].tagline%></p>
+          <h3><%= @featured[0].title%></h3>
+          <p><%=@featured[0].tagline%></p>
         </div>
       </div>
 
       <div class="item">
-        <img src="https://image.tmdb.org/t/p/w500/<%=@featured_movies[1].photo_path%>" alt="Image">
+        <img src="https://image.tmdb.org/t/p/w500/<%=@featured[1].photo_path%>" alt="Image">
         <div class="carousel-caption">
           <h3>More Sell $</h3>
           <p>Lorem ipsum...</p>
@@ -40,20 +40,20 @@
   <h3>Trending Movies</h3><br>
   <div class="row">
     <div class="col-sm-3">
-      <p><%= @trending_movies[0].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending_movies[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <p><%= @trending[0].title%></p>
+      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
-      <p><%= @trending_movies[1].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending_movies[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <p><%= @trending[1].title%></p>
+      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
-      <p><%= @trending_movies[2].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending_movies[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <p><%= @trending[2].title%></p>
+      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
-      <p><%= @trending_movies[3].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending_movies[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <p><%= @trending[3].title%></p>
+      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
   </div>
 </div><br>
@@ -63,19 +63,19 @@
   <div class="row">
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@top_movies[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@top_movies[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@top_movies[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@top_movies[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
   </div>
 </div><br>
@@ -85,19 +85,19 @@
   <div class="row">
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@random_movies[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@random_movies[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@random_movies[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@random_movies[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
     </div>
   </div>
 </div><br>

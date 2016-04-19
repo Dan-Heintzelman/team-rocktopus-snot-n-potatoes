@@ -4,8 +4,6 @@ require 'imdb'
 require 'json'
 require_relative './../api.rb'
 
-20.times { Movie.create!(title: Faker::Name.title) }
-
 User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
 
 all_array = Imdb::Top250.new.movies
@@ -34,7 +32,7 @@ movies.each do |movie|
 
     response = JSON.parse(response)
     tmdb_id = response["results"][0]['id']
-    sleep(3)
+    sleep(0.5)
     uri = URI.parse("https://api.themoviedb.org/3/movie/#{tmdb_id}?api_key=#{API_KEY}")
     response = JSON.parse(Net::HTTP.get(uri))
     Movie.create!(title: response['title'], photo_path: response['poster_path'], tagline: response['tagline'], overview: response['overview'], genre: response['genres'][0]['name'], release_date: response['release_date'], runtime: response['runtime'])
@@ -43,7 +41,6 @@ movies.each do |movie|
 
 end
 
-# https://image.tmdb.org/t/p/w500/65Uy9xucPOAZDKa54RlojVyP24k.jpg
 
 20.times { User.create(username: Faker::Name.first_name, password:'password', email: Faker::Internet.email) }
 100.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10)) }
