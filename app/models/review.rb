@@ -3,5 +3,5 @@ class Review < ActiveRecord::Base
   belongs_to :movie
   has_many :votes
 
-  validates_presence_of :rating
+  validates_presence_of :rating, :user, :movie
 end
