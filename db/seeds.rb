@@ -34,7 +34,7 @@ movies.each do |movie|
 
     response = JSON.parse(response)
     tmdb_id = response["results"][0]['id']
-    sleep(3)
+    sleep(0.5)
     uri = URI.parse("https://api.themoviedb.org/3/movie/#{tmdb_id}?api_key=#{API_KEY}")
     response = JSON.parse(Net::HTTP.get(uri))
     Movie.create!(title: response['title'], photo_path: response['poster_path'], tagline: response['tagline'], overview: response['overview'], genre: response['genres'][0]['name'], release_date: response['release_date'], runtime: response['runtime'])
