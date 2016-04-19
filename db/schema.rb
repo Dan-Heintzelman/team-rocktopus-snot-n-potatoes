@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 20160418195119) do
     t.string   "photo_path"
     t.string   "genre"
     t.string   "runtime"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "release_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "reviews", force: :cascade do |t|
