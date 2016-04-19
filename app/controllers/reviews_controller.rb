@@ -1,21 +1,21 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate!, only [:create]
-
-  def new
-    @review = Review.new
-  end
+  before_action :authenticate!, only: [:create]
 
   def create
-    @review = Review.new(review_params)
+    params[:review] = {rating: params[:rating], comment: params[:review][:comment]}
+    @movie = Movie.find(params[:movie_id])
+    @review = @movie.reviews.create(review_params)
+    @review.user = current_user
     if @review.save
-      redirect_to new_movie_review
+      redirect_to @movie
     else
-      render 'new'
+      @errors = @review.errors
+      render 'movies/show'
     end
   end
 
   private
   def review_params
-    params.require(:review).permit(:rating, :user, :movie, :comment)
+    params.require(:review).permit(:rating, :comment)
   end
 end

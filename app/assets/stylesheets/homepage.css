@@ -35,14 +35,6 @@ footer {
       margin: 0 0 0 -16px;
       opacity: 0;
   }
-  .rating-star {
-      position: relative;
-      float: right;
-      display: block;
-      width: 16px;
-      height: 16px;
-      background: url('star.png') 0 -16px;
-  }
   .rating:hover .rating-star:hover,
   .rating:hover .rating-star:hover ~ .rating-star,
   .rating-input:checked ~ .rating-star {
@@ -63,3 +55,6 @@ footer {
   width: 40%;
 }
 
+li {
+  list-style: none;
+}

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 resources :movies do
-  resources :reviews, only: [:index, :new]
+  resources :reviews, only: [:index, :create]
   resources :favorites, only: [:create, :destroy]
 end
 
