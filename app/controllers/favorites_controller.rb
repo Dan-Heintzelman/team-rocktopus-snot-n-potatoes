@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate!
 
   def create
-    @favorite = Favorite.create(favorite_params)
+    @favorite = Favorite.create(movie_id: params[:movie_id], user: User.find_by(id: params[:user]))
   end
 
   def destroy

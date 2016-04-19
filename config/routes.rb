@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 resources :movies do
   resources :reviews, only: [:index, :new]
+  resources :favorites, only: [:create, :destroy]
 end
 
 resources :reviews, only: [:destroy]

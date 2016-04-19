@@ -3,15 +3,16 @@
   <br>
   <div class="row">
     <div class=" col-sm-4 ">
-      <img src="http://placehold.it/500x750?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movie.photo_path%>" class="img-responsive" style="width:100%" alt="Image">
+      <h4><%=@movie.tagline%></h4>
     </div>
     <div class="col-sm-8">
       <div class="text-left">
-        <h1 class="text-center">Movie Title</h1>
+        <h1 class="text-center"><%=@movie.title%></h1>
         <h3>Hot Pototatoe or Snot Potatoe?</h3>
         <ul>
           <li>Number of Users Favorited:</li>
+          <li><%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %></li>
           <li>Number of Reviews:</li>
           <li>Average Rating:
           <!-- Insert logic here -->
@@ -19,10 +20,10 @@
         </ul>
         <h3>Movie Details</h3>
         <ul>
-          <li>Number of Reviews:</li>
-          <li>Average Rating:
-          <!-- Insert logic here -->
-          </li>
+          <li><%=@movie.overview%></li>
+          <li>Release Date: <%=@movie.release_date%></li>
+          <li>Genre: <%=@movie.genre%></li>
+          <li>Runtime: <%=@movie.runtime%></li>
         </ul>
       </div>
     </div>
@@ -49,4 +50,3 @@
       <h3 class="text-center"></h3>
     </div> -->
   </div>
-</div>
