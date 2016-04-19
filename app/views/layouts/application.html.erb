@@ -16,7 +16,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Logo</a>
+       <%=image_tag("potato.png", class: 'potato')%>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -30,9 +30,9 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-          <li><span class="glyphicon glyphicon-log-out"></span><%= link_to 'Logout', logout_path, method: :delete %></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete %></li>
           <% else %>
-          <li><span class="glyphicon glyphicon-log-in"><%= link_to 'Login',  login_path %></li>
+          <li><%= link_to 'Login',  login_path %></li>
           <% end %>
         </ul>
       </div>

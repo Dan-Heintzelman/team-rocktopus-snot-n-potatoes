@@ -4,6 +4,10 @@
   border-radius: 0;
 }
 
+.navbar a {
+  color: white;
+}
+
 /* Add a gray background color and some padding to the footer */
 footer {
   background-color: #f2f2f2;
@@ -23,38 +27,38 @@ footer {
 }
 }
 
-.rating {
-      overflow: hidden;
-      display: inline-block;
-  }
-  .rating-input {
-      float: right;
-      width: 16px;
-      height: 16px;
-      padding: 0;
-      margin: 0 0 0 -16px;
-      opacity: 0;
-  }
-  .rating:hover .rating-star:hover,
-  .rating:hover .rating-star:hover ~ .rating-star,
-  .rating-input:checked ~ .rating-star {
-      background-position: 0 0;
-  }
-  .rating-star,
-  .rating:hover .rating-star {
-      position: relative;
-      float: right;
-      display: block;
-      width: 16px;
-      height: 16px;
-      background: url('star.png') 0 -16px;
-  }
-
-
 .favorites {
   width: 40%;
 }
 
 li {
   list-style: none;
+}
+
+.potato {
+  width: 50px;
+  height: 60px;
+}
+
+textarea {
+  width: 600px;
+  height: 120px;
+}
+
+table {
+  margin: auto;
+}
+
+.rating {
+  padding: 0.5em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.review-comment {
+  padding: 0.5em;
+  width: 600px;
+  max-width: 600px;
+  height: 100px;
+  overflow: hidden;
 }
