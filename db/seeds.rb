@@ -4,6 +4,8 @@ require 'imdb'
 require 'json'
 require_relative './../vendor/api_key.rb'
 
+20.times { Movie.create!(title: Faker::Name.title) }
+
 User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
 
 all_array = Imdb::Top250.new.movies
@@ -43,6 +45,6 @@ end
 
 # https://image.tmdb.org/t/p/w500/65Uy9xucPOAZDKa54RlojVyP24k.jpg
 
-
-
-
+20.times { User.create(username: Faker::Name.first_name, password:'password', email: Faker::Internet.email) }
+100.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10)) }
+100.times { Vote.create(user: User.all.sample, review: Review.all.sample, helpful: [true, false].sample)}
