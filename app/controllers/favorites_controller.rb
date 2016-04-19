@@ -7,7 +7,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
+    @favorite = Favorite.find_by(movie_id: params[:movie_id], user: User.find_by(id: params[:user]))
     @favorite.destroy
     redirect_to user_path(params[:user])
   end
