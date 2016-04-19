@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   include MoviesHelper
+
   def index
-    dude
     @movies = Movie.all
     @trending = Movie.trending
     @featured = Movie.featured
