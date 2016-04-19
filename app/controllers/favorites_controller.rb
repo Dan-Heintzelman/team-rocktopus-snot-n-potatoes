@@ -3,11 +3,13 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.create(movie_id: params[:movie_id], user: User.find_by(id: params[:user]))
+    redirect_to user_path(params[:user])
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
+    redirect_to user_path(params[:user])
   end
 
   private
