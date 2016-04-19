@@ -1,15 +1,15 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-describe Movie do
-  let(:movie) { Movie.new(title: 'Deadpool') }
+# describe Movie do
+#   let(:movie) { Movie.new(title: 'Deadpool') }
 
-  describe "should not create movie without title" do
-    new_movie = Movie.new
-    assert_not movie.save
-  end
-
-
+#   describe "should not create movie without title" do
+#     new_movie = Movie.new
+#     assert_not movie.save
+#   end
 
 
 
-end
+
+
+# end
