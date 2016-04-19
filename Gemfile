@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'shoulda-matchers'
+gem 'imdb', '~> 0.8'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
