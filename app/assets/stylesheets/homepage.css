@@ -22,6 +22,7 @@ footer {
   display: none;
 }
 }
+
 .rating {
       overflow: hidden;
       display: inline-block;
@@ -56,3 +57,9 @@ footer {
       height: 16px;
       background: url('star.png') 0 -16px;
   }
+
+
+.favorites {
+  width: 40%;
+}
+
