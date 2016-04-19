@@ -11,5 +11,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+/api.rb
 /vendor/api_key.rb
+/app/helpers/api.rb
 
