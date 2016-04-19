@@ -10,18 +10,10 @@
       <div class="item active">
         <a href="/movies/<%= @featured[0].id %>"><img src="https://image.tmdb.org/t/p/w500/<%= @featured[0].photo_path%>" alt="Image"></a>
         <!-- <img src="http://placehold.it/200x300?text=IMAGE" alt="Image"> -->
-        <div class="carousel-caption">
-          <h3><%= @featured[0].title %></h3>
-          <p><%= @featured[0].tagline %></p>
-        </div>
       </div>
 
       <div class="item">
         <a href="/movies/<%= @featured[1].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@featured[1].photo_path%>" alt="Image"></a>
-        <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
-        </div>
       </div>
     </div>
 
@@ -64,11 +56,11 @@
 </div><br>
 
 <div class="container-fluid bg-3 text-center">
-  <h3><%= @genre.join('') %></h3><br>
+  <h3>Random Genre: <%= @genre.join('') %></h3><br>
   <div class="row">
   <% for i in 0..3 %>
     <div class="col-sm-3">
-      <p>Some text..</p>
+      <p><%= @random_genre1[i].title %></p>
       <a href="/movies/<%= @random_genre1[i].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@random_genre1[i].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
     </div>
   <% end %>
@@ -76,18 +68,7 @@
   </div>
 </div><br>
 
-<div class="container-fluid bg-3 text-center">
-  <h3><%= @genre2.join('') %></h3><br>
-  <div class="row">
-  <% for i in 0..3 %>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <a href="/movies/<%= @random_genre2[i].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@random_genre2[i].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
-    </div>
-  <% end %>
 
-  </div>
-</div>
 
 
 

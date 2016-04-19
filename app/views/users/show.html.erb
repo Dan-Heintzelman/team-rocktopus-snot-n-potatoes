@@ -18,7 +18,7 @@
     <% @user.reviewed_movies.each do |rev| %>
       <div class="col-sm-3">
         <p><%= rev.title %></p>
-        <a href="/movies/<%=rev.id%>"><img src="https://image.tmdb.org/t/p/w500/<%=rev.photo_path%>"></a>
+        <a href="/movies/<%=rev.id%>"><img class="favorites" src="https://image.tmdb.org/t/p/w500/<%=rev.photo_path%>"></a>
       </div>
     <% end %>
   </div><br>
