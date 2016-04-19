@@ -12,7 +12,7 @@ class Movie < ActiveRecord::Base
 
   def self.trending
     movies = Movie.all
-    movies.sort{|movie1, movie2| movie2.votes.length <=> movie1.votes.length}
+    movies.sort{|movie1, movie2| movie2.favorites.length <=> movie1.favorites.length}
     return movies[0..4]
   end
 

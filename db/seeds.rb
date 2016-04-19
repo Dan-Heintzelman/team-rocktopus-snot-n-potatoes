@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 require 'imdb'
 require 'json'
-require_relative './../vendor/api_key.rb'
+require_relative './../api.rb'
 
 20.times { Movie.create!(title: Faker::Name.title) }
 
