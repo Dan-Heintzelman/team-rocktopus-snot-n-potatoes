@@ -1,16 +1,53 @@
-<h1>Movie Show Page</h1>
+<div class="container text-center">
 
-<div id="movie-info">
-  <ul>
-    <li><%=@movie.title%></li>
-    <li><%=@movie.tagline%></li>
-    <li><%=@movie.overview%></li>
-    <li><%=@movie.release_date%></li>
-    <li><%=@movie.genre%></li>
-    <li><%=@movie.runtime%></li>
-    <li><img src="https://image.tmdb.org/t/p/w500/<%=@movie.photo_path%>"></li>
-  </ul>
+  <br>
+  <div class="row">
+    <div class=" col-sm-4 ">
+      <img src="https://image.tmdb.org/t/p/w500/<%=@movie.photo_path%>" class="img-responsive" style="width:100%" alt="Image">
+      <h4><%=@movie.tagline%></h4>
+    </div>
+    <div class="col-sm-8">
+      <div class="text-left">
+        <h1 class="text-center"><%=@movie.title%></h1>
+        <h3>Hot Pototatoe or Snot Potatoe?</h3>
+        <ul>
+          <li>Number of Users Favorited:</li>
+          <li><%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %></li>
+          <li>Number of Reviews:</li>
+          <li>Average Rating:
+          <!-- Insert logic here -->
+          </li>
+        </ul>
+        <h3>Movie Details</h3>
+        <ul>
+          <li><%=@movie.overview%></li>
+          <li>Release Date: <%=@movie.release_date%></li>
+          <li>Genre: <%=@movie.genre%></li>
+          <li>Runtime: <%=@movie.runtime%></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 
-  <%= render 'reviews/_new' %>
 </div>
+<hr>
+<div class="container text-center">
+
+  <div class="row">
+    <!-- <div class="col-sm-2">
+      <h3 class="text-center"></h3>
+    </div> -->
+    <div class="well col-sm-12 ">
+      <h3 class="text-center">Reviews</h3>
+      <ul class="text-left">
+        <li>Review1</li>
+        <li>Review2</li>
+        <li>Review3</li>
+        <li>Review4</li>
+      </ul>
+    </div>
+    <!-- <div class=" col-sm-2">
+      <h3 class="text-center"></h3>
+    </div> -->
+  </div>
