@@ -1,0 +1,12 @@
+<div class="container-fluid bg-3 text-center">
+  <h3><%= @genre %> Movies</h3><br>
+  <div class="row">
+
+    <% @movies.each do |mov| %>
+      <div class="col-sm-3">
+        <p><%= mov.title%></p>
+        <a href="/movies/<%= mov.id %>"><img src="https://image.tmdb.org/t/p/w500/<%= mov.photo_path %>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
+      </div>
+    <% end %>
+  </div>
+</div>

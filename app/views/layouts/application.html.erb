@@ -16,7 +16,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Logo</a>
+       <%=image_tag("potato.png", class: 'potato')%>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -26,16 +26,36 @@
             <li><%= link_to 'Profile', user_path(current_user) %></li>
 
           <% end %>
+          <li >
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Genres
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Action", movie_genres_path("action")%></li>
+              <li><%= link_to "Adventure", movie_genres_path("adventure")%></li>
+              <li><%= link_to "Animation", movie_genres_path("animation")%></li>
+              <li><%= link_to "Comedy", movie_genres_path("comedy")%></li>
+              <li><%= link_to "Crime", movie_genres_path("crime")%></li>
+              <li><%= link_to "Drama", movie_genres_path("drama")%></li>
+              <li><%= link_to "Fantasy", movie_genres_path("fantasy")%></li>
+              <li><%= link_to "Horror", movie_genres_path("horror")%></li>
+              <li><%= link_to "Mystery", movie_genres_path("mystery")%></li>
+              <li><%= link_to "Romance", movie_genres_path("romance")%></li>
+              <li><%= link_to "Thriller", movie_genres_path("thriller")%></li>
+              <li><%= link_to "Western", movie_genres_path("western")%></li>
+            </ul>
+          </li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-          <li><span class="glyphicon glyphicon-log-out"></span><%= link_to 'Logout', logout_path, method: :delete %></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete %></li>
           <% else %>
-          <li><span class="glyphicon glyphicon-log-in"><%= link_to 'Login',  login_path %></li>
+          <li><%= link_to 'Login',  login_path %></li>
           <% end %>
+
         </ul>
       </div>
+
     </div>
   </nav>
 

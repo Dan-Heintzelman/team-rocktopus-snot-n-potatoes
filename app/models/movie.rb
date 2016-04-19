@@ -13,7 +13,7 @@ class Movie < ActiveRecord::Base
   def self.trending
     movies = Movie.all
     movies.sort{|movie1, movie2| movie2.favorites.length <=> movie1.favorites.length}
-    return movies[0..4]
+    return movies[0..3]
   end
 
   def self.featured

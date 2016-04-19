@@ -8,7 +8,7 @@
     </div>
     <div class="col-sm-8">
       <div class="text-left">
-        <h1 class="text-center"><%=@movie.title%></h1>
+        <h1 class="text-center"><%= @movie.title%></h1>
         <h3>Hot Pototatoe or Snot Potatoe?</h3>
         <ul>
           <li>Number of Users Favorited: <%=@movie.favorites.length%></li></li>
@@ -23,7 +23,6 @@
             <% @movie.average_rating.times do %>
             <span><i class="fa fa-star" aria-hidden="true"></i></span>
             <% end %>
-          </li>
           <li>Number of Reviews: <%=@movie.reviews.length%></li>
 
         </ul>
@@ -52,7 +51,7 @@
       <%= render partial: 'reviews/new' %>
       <ul class="text-left">
         <% @movie.reviews.each do |review| %>
-        <li><%= render partial: 'reviews/show', locals: {review: review} %></li>
+        <li><%= render partial: 'reviews/show', locals: {review: review, movie: @movie} %></li>
         <% end %>
       </ul>
     </div>

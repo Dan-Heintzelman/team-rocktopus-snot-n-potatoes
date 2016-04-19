@@ -1,14 +1,13 @@
 class MoviesController < ApplicationController
+  include MoviesHelper
   def index
+    dude
     @movies = Movie.all
     @trending = Movie.trending
     @featured = Movie.featured
-    @comedies = Movie.categorize("Comedy")
-    @dramas = Movie.categorize("Drama")
-    @action = Movie.categorize("Action")
-    @chick_flicks = Movie.categorize("Romance")
-    @nerdy = Movie.categorize("Sci-Fi")
-    @harrah = Movie.categorize("Horror")
+    rando = random_genre
+    @genre = rando
+    @random_genre1 = Movie.categorize(rando)
   end
 
   def new
@@ -19,6 +18,14 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def show_by_genre
+    @genre = params["genre"].capitalize
+    @movies = Movie.categorize(@genre)
+  end
+
+  def create
+    add_one_movie(params["imdb_id"])
+  end
 
   private
   def movie_params
