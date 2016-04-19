@@ -1,7 +1,7 @@
 <div class="container-fluid bg-3 text-center">
   <h3>Favorites</h3><br>
-  <div class="row">
 
+  <div class="row">
     <% @user.favorites.each do |fav| %>
       <div class="col-sm-3">
         <p><%= fav.movie.title %></p>
@@ -10,8 +10,9 @@
     <% end %>
   </div><br>
 
-<div class="container-fluid bg-3 text-center">
   <h3>Reviewed</h3><br>
+
+  <div class="container-fluid bg-3 text-center">
     <%= @user.reviews.each do |rev| %>
       <div class="col-sm-3">
         <p><%= rev.movie.title %></p>
