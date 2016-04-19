@@ -59,9 +59,6 @@ movies.each do |movie|
   p response['title']
   end
 
-end
-
-
 20.times { User.create(username: Faker::Name.first_name, password:'password', email: Faker::Internet.email) }
-100.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10)) }
+1500.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10), comment: Faker::Lorem.paragraph) }
 100.times { Vote.create(user: User.all.sample, review: Review.all.sample, helpful: [true, false].sample)}

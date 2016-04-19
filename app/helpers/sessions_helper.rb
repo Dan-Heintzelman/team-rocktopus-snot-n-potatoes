@@ -20,6 +20,6 @@ module SessionsHelper
   end
 
   def authenticate!
-    redirect_to root_path unless logged_in?
+    redirect_to login_path unless logged_in?
   end
 end
