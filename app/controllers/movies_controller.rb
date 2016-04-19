@@ -1,6 +1,14 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @trending = Movie.trending
+    @featured = Movie.featured
+    @comedies = Movie.categorize("Comedy")
+    @dramas = Movie.categorize("Drama")
+    @action = Movie.categorize("Action")
+    @chick_flicks = Movie.categorize("Romance")
+    @nerdy = Movie.categorize("Sci-Fi")
+    @harrah = Movie.categorize("Horror")
   end
 
   def new

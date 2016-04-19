@@ -6,17 +6,17 @@ class Movie < ActiveRecord::Base
 
   validates_presence_of :title
 
-  def categorize(genre)
+  def self.categorize(genre = "Drama")
     return Movie.where(genre: genre)
   end
 
-  def trending
+  def self.trending
     movies = Movie.all
     movies.sort{|movie1, movie2| movie2.votes.length <=> movie1.votes.length}
     return movies[0..4]
   end
 
-  def featured
+  def self.featured
     movies = Movie.all
     featured = []
     2.times {featured << movies.sample}
