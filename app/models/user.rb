@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	validates_presence_of :username, :email
+	validates_presence_of :username, :email, :password_digest
+	validates_uniqueness_of :email
 	has_secure_password
 
 	has_many :reviews
