@@ -1,5 +1,5 @@
 <h1>Movie Show Page</h1>
-
+<%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %>
 <div id="movie-info">
   <ul>
     <li><%=@movie.title%></li>
