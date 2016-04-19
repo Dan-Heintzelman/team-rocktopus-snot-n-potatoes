@@ -8,6 +8,9 @@ end
 
 resources :reviews, only: [:destroy]
 
+get '/movies/genre/:genre', to: 'movies#show_by_genre', as: 'movie_genres'
+
+
 root 'movies#index'
 
 
