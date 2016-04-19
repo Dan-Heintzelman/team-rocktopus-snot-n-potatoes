@@ -28,11 +28,14 @@ ActiveRecord::Schema.define(version: 20160418195119) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
-    t.string   "photo"
+    t.string   "tagline"
+    t.text     "overview"
+    t.string   "photo_path"
     t.string   "genre"
-    t.string   "run_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "runtime"
+    t.string   "release_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "reviews", force: :cascade do |t|
