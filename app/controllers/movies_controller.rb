@@ -1,5 +1,3 @@
-require_relative "./../../db/seeds.rb"
-
 class MoviesController < ApplicationController
   include MoviesHelper
   before_action :authenticate!, except: [:index, :show]

@@ -2,7 +2,6 @@ require 'uri'
 require 'net/http'
 require 'imdb'
 require 'json'
-require_relative './../api.rb'
 
 def dude
   puts "****** yooooooooo ********"

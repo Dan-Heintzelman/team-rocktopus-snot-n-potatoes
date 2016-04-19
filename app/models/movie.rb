@@ -26,6 +26,7 @@ class Movie < ActiveRecord::Base
   def self.highest_rated
     movies = Movie.all
     sorted = movies.sort{|movie1, movie2| movie2.average_rating <=> movie1.average_rating}
+    return sorted[0..3]
   end
 
 
