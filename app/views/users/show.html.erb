@@ -1,43 +1,21 @@
 <div class="container-fluid bg-3 text-center">
   <h3>Favorites</h3><br>
   <div class="row">
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div><br>
+
+    <% @user.favorites.each do |fav| %>
+      <div class="col-sm-3">
+        <p><%= fav.movie.title %></p>
+        <img class="favorites" src="https://image.tmdb.org/t/p/w500/<%=fav.movie.photo_path%>">
+      </div>
+    <% end %>
+  </div><br>
 
 <div class="container-fluid bg-3 text-center">
   <h3>Reviewed</h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div><br>
+    <%= @user.reviews.each do |rev| %>
+      <div class="col-sm-3">
+        <p><%= rev.movie.title %></p>
+        <img src="https://image.tmdb.org/t/p/w500/<%=fav.movie.photo_path%>">
+      </div>
+    <% end %>
+  </div><br>
