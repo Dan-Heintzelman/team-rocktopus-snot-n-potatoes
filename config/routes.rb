@@ -10,9 +10,9 @@ resources :reviews, only: [:destroy]
 root 'movies#index'
 
 
- get 'login' => 'session#new'
- post 'login' => 'session#create'
- delete 'logout' => 'session#destroy'
+ get 'login' => 'sessions#new'
+ post 'login' => 'sessions#create'
+ delete 'logout' => 'sessions#destroy'
 
  resources :users, except: [:index, :destroy]
 

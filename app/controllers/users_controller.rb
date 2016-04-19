@@ -3,11 +3,12 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(params[user_params])
+		@user = User.new(user_params)
 
 		if @user.save
-			redirect_to @user
+			redirect_to @user, notice: 'User created!'
 		else
+			puts "user didn't save"
 			render 'new'
 		end
 	end
@@ -18,12 +19,12 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@favorites = @user.favorited_movies.shuffle[0..4]
 	end
 
 	def update
 		@user = User.find(params[:id])
-
-		@user.update(params[user_params])
+		@user.update(user_params)
 		if @user.save
 			redirect_to @user
 		else

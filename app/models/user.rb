@@ -23,4 +23,5 @@ class User < ActiveRecord::Base
 	def is_trusted?
 		self.up_votes > 5
 	end
+
 end
