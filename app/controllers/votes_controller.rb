@@ -2,7 +2,7 @@ class VotesController < ApplicationController
   before_action :authenticate!
 
   def create
-    @vote = Vote.create(params[vote_params])
+    @vote = Vote.create(vote_params)
   end
 
   private

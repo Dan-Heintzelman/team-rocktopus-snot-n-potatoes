@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(params[review_params])
+    @review = Review.new(review_params)
     if @review.save
       redirect_to new_movie_review
     else
