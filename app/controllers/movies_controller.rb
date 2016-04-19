@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
   include MoviesHelper
+  before_action :authenticate!, except: [:index, :show]
+
   def index
-    dude
     @movies = Movie.all
     @trending = Movie.trending
     @featured = Movie.featured

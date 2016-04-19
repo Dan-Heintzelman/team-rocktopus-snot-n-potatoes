@@ -9,11 +9,11 @@
     <div class="col-sm-8">
       <div class="text-left">
         <h1 class="text-center"><%= @movie.title%></h1>
-        <h3>Hot Pototatoe or Snot Potatoe?</h3>
+        <h3>Hot Pototato or Snot Potato?</h3>
         <ul>
           <li>Number of Users Favorited: <%= @movie.favorites.count %></li>
           <li>
-          <% if in_favorites?(current_user, @movie.id) %>
+          <% if in_favorites?(@movie.id) %>
             <%= button_to "Unfavorite", {:controller => "favorites", :action => "destroy", :movie_id => @movie.id, :user => current_user}, :method=>:delete %>
           <% else %>
             <%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %>
@@ -29,7 +29,7 @@
           <li><%=@movie.overview%></li>
           <li>Release Date: <%=@movie.release_date%></li>
           <li>Genre: <%=@movie.genre%></li>
-          <li>Runtime: <%=@movie.runtime%></li>
+          <li>Runtime: <%=@movie.runtime%> minutes</li>
         </ul>
       </div>
     </div>
