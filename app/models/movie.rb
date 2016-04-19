@@ -12,8 +12,8 @@ class Movie < ActiveRecord::Base
 
   def self.trending
     movies = Movie.all
-    movies.sort{|movie1, movie2| movie2.favorites.length <=> movie1.favorites.length}
-    return movies[0..3]
+    sorted = movies.sort{|movie1, movie2| movie2.favorites.length <=> movie1.favorites.length}
+    return sorted[0..3]
   end
 
   def self.featured
@@ -23,6 +23,12 @@ class Movie < ActiveRecord::Base
     return featured
   end
 
+  def self.highest_rated
+    movies = Movie.all
+    sorted = movies.sort{|movie1, movie2| movie2.average_rating <=> movie1.average_rating}
+  end
+
+
   def average_rating
     reviews = self.reviews
     sum = 0
@@ -31,7 +37,7 @@ class Movie < ActiveRecord::Base
     end
 
     return sum / reviews.length
-    
+
   end
 
 end
