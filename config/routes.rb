@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
 
 resources :movies do
-  resources :reviews, only: :index
+  resources :reviews, only: [:index, :new]
 end
 
-  root 'movies#index'
+resources :reviews, only: [:destroy]
+
+root 'movies#index'
 
 
  get 'login' => 'session#new'
