@@ -36,7 +36,11 @@ class Movie < ActiveRecord::Base
       sum += review.rating
     end
 
-    return sum / reviews.length
+    if reviews.length != 0
+      sum / reviews.length
+    else
+      return 0
+    end
 
   end
 

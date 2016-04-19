@@ -1,3 +1,5 @@
+require_relative "./../../db/seeds.rb"
+
 class MoviesController < ApplicationController
   include MoviesHelper
   before_action :authenticate!, except: [:index, :show]
@@ -28,6 +30,7 @@ class MoviesController < ApplicationController
 
   def create
     add_one_movie(params["imdb_id"])
+    redirect_to movies_path
   end
 
   private
