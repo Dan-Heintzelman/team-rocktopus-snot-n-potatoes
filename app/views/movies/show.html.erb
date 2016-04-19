@@ -1,0 +1,13 @@
+<h1>Movie Show Page</h1>
+
+<div id="movie-info">
+  <ul>
+    <li><%=@movie.title%></li>
+    <li><%=@movie.tagline%></li>
+    <li><%=@movie.overview%></li>
+    <li><%=@movie.release_date%></li>
+    <li><%=@movie.genre%></li>
+    <li><%=@movie.runtime%></li>
+    <li><img src="https://image.tmdb.org/t/p/w500/<%=@movie.photo_path%>"></li>
+  </ul>
+</div>
