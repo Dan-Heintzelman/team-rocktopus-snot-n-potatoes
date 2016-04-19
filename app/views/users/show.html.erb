@@ -1,11 +1,13 @@
 <div class="container-fluid bg-3 text-center">
+  <h1>Welcome, <%= @user.username %></h1>
+
   <h3>Favorites</h3><br>
 
   <div class="row">
     <% @user.favorited_movies.each do |fav| %>
       <div class="col-sm-3">
         <p><%= fav.title %></p>
-        <img class="favorites" src="https://image.tmdb.org/t/p/w500/<%= fav.photo_path %>">
+        <a href="/movies/<%=fav.id%>"><img class="favorites" src="https://image.tmdb.org/t/p/w500/<%= fav.photo_path %>"></a>
       </div>
     <% end %>
   </div><br>
@@ -13,10 +15,10 @@
   <h3>Reviewed</h3><br>
 
   <div class="container-fluid bg-3 text-center">
-    <%= @user.reviewed_movies.each do |rev| %>
+    <% @user.reviewed_movies.each do |rev| %>
       <div class="col-sm-3">
         <p><%= rev.title %></p>
-        <img src="https://image.tmdb.org/t/p/w500/<%=rev.photo_path%>">
+        <a href="/movies/<%=rev.id%>"><img src="https://image.tmdb.org/t/p/w500/<%=rev.photo_path%>"></a>
       </div>
     <% end %>
   </div><br>

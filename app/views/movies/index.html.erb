@@ -8,16 +8,16 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://image.tmdb.org/t/p/w500/<%= @movie.featured[0].photo_path%>" alt="Image">
+        <a href="/movies/<%= @featured[0].id %>"><img src="https://image.tmdb.org/t/p/w500/<%= @featured[0].photo_path%>" alt="Image"></a>
         <!-- <img src="http://placehold.it/200x300?text=IMAGE" alt="Image"> -->
         <div class="carousel-caption">
-          <h3><%= @featured[0].title%></h3>
-          <p><%=@featured[0].tagline%></p>
+          <h3><%= @featured[0].title %></h3>
+          <p><%= @featured[0].tagline %></p>
         </div>
       </div>
 
       <div class="item">
-        <img src="https://image.tmdb.org/t/p/w500/<%=@featured[1].photo_path%>" alt="Image">
+        <a href="/movies/<%= @featured[1].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@featured[1].photo_path%>" alt="Image"></a>
         <div class="carousel-caption">
           <h3>More Sell $</h3>
           <p>Lorem ipsum...</p>
@@ -39,68 +39,55 @@
 <div class="container-fluid bg-3 text-center">
   <h3>Trending Movies</h3><br>
   <div class="row">
-    <div class="col-sm-3">
-      <p><%= @trending[0].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p><%= @trending[1].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p><%= @trending[2].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p><%= @trending[3].title%></p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@trending[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
+
+    <% @trending.each do |mov| %>
+      <div class="col-sm-3">
+        <p><%= mov.title%></p>
+        <a href="/movies/<%= mov.id %>"><img src="https://image.tmdb.org/t/p/w500/<%= mov.photo_path %>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
+      </div>
+    <% end %>
   </div>
-</div><br>
+</div>
 
 <div class="container-fluid bg-3 text-center">
   <h3>Top Movies</h3><br>
   <div class="row">
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
+
+    <% for i in 0..3  %>
+      <div class="col-sm-3">
+        <p>Some text..</p>
+        <a href="/movies/<%= @movies[i].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@movies[i].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
+      </div>
+    <% end %>
+
   </div>
 </div><br>
 
 <div class="container-fluid bg-3 text-center">
-  <h3>Random Movies</h3><br>
+  <h3><%= @genre.join('') %></h3><br>
   <div class="row">
+  <% for i in 0..3 %>
     <div class="col-sm-3">
       <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[0].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
+      <a href="/movies/<%= @random_genre1[i].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@random_genre1[i].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
     </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[1].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[2].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://image.tmdb.org/t/p/w500/<%=@movies[3].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image">
-    </div>
+  <% end %>
+
   </div>
 </div><br>
+
+<div class="container-fluid bg-3 text-center">
+  <h3><%= @genre2.join('') %></h3><br>
+  <div class="row">
+  <% for i in 0..3 %>
+    <div class="col-sm-3">
+      <p>Some text..</p>
+      <a href="/movies/<%= @random_genre2[i].id %>"><img src="https://image.tmdb.org/t/p/w500/<%=@random_genre2[i].photo_path%>" width="200px" height="300px" style="width:100%" class="img-responsive" alt="Image"></a>
+    </div>
+  <% end %>
+
+  </div>
+</div>
 
 
 
