@@ -2,9 +2,7 @@ require 'uri'
 require 'net/http'
 require 'imdb'
 require 'json'
-require_relative './../vendor/api_key.rb'
-
-20.times { Movie.create!(title: Faker::Name.title) }
+require_relative './../api.rb'
 
 User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
 
@@ -43,7 +41,6 @@ movies.each do |movie|
 
 end
 
-# https://image.tmdb.org/t/p/w500/65Uy9xucPOAZDKa54RlojVyP24k.jpg
 
 20.times { User.create(username: Faker::Name.first_name, password:'password', email: Faker::Internet.email) }
 100.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10)) }
