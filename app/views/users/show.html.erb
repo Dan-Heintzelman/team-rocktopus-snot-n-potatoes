@@ -2,10 +2,10 @@
   <h3>Favorites</h3><br>
 
   <div class="row">
-    <% @user.favorites.each do |fav| %>
+    <% @user.favorited_movies.each do |fav| %>
       <div class="col-sm-3">
-        <p><%= fav.movie.title %></p>
-        <img class="favorites" src="https://image.tmdb.org/t/p/w500/<%=fav.movie.photo_path%>">
+        <p><%= fav.title %></p>
+        <img class="favorites" src="https://image.tmdb.org/t/p/w500/<%= fav.photo_path %>">
       </div>
     <% end %>
   </div><br>
@@ -13,10 +13,10 @@
   <h3>Reviewed</h3><br>
 
   <div class="container-fluid bg-3 text-center">
-    <%= @user.reviews.each do |rev| %>
+    <%= @user.reviewed_movies.each do |rev| %>
       <div class="col-sm-3">
-        <p><%= rev.movie.title %></p>
-        <img src="https://image.tmdb.org/t/p/w500/<%=fav.movie.photo_path%>">
+        <p><%= rev.title %></p>
+        <img src="https://image.tmdb.org/t/p/w500/<%=rev.photo_path%>">
       </div>
     <% end %>
   </div><br>

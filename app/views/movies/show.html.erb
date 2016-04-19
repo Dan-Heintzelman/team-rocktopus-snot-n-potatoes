@@ -35,6 +35,7 @@
     </div>
   </div>
 
+
 </div>
 <hr>
 <div class="container text-center">
@@ -45,11 +46,11 @@
     </div> -->
     <div class="well col-sm-12 ">
       <h3 class="text-center">Reviews</h3>
+      <%= render partial: 'reviews/new' %>
       <ul class="text-left">
-        <li>Review1</li>
-        <li>Review2</li>
-        <li>Review3</li>
-        <li>Review4</li>
+        <% @movie.reviews.each do |review| %>
+        <li><%= render partial: 'reviews/show', locals: {review: review} %></li>
+        <% end %>
       </ul>
     </div>
     <!-- <div class=" col-sm-2">
