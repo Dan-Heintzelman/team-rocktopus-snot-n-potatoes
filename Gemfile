@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'faker'
+
 
 
 # Add frontend frameworks here (bootstrap/react)
@@ -32,6 +34,7 @@ gem 'react-rails', '~> 1.6.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'jquery-ui-rails'
+
 
 
 gem 'imdb', '~> 0.8'
@@ -48,9 +51,10 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'pry'
   gem 'byebug'
-  gem 'shoulda-matchers'
   gem 'shoulda'
 end
 
