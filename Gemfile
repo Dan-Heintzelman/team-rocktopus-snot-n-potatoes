@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Add frontend frameworks here (bootstrap/react)
+gem 'react-rails', '~> 1.6.0'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'jquery-ui-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
