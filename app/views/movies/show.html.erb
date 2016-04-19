@@ -12,7 +12,13 @@
         <h3>Hot Pototatoe or Snot Potatoe?</h3>
         <ul>
           <li>Number of Users Favorited:</li>
-          <li><%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %></li>
+          <li>
+          <% if in_favorites?(current_user, @movie.id) %>
+            <%= button_to "Unfavorite", {:controller => "favorites", :action => "destroy", :movie_id => @movie.id, :user => current_user}, :method=>:delete %>
+          <% else %>
+            <%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %>
+          <% end %>
+          </li>
           <li>Number of Reviews:</li>
           <li>Average Rating:
           <!-- Insert logic here -->
