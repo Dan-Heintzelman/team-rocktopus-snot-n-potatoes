@@ -60,7 +60,9 @@
       <%= render partial: 'reviews/new' %>
       <ul class="text-left">
         <% @movie.reviews.each do |review| %>
-        <li><%= render partial: 'reviews/show', locals: {review: review, movie: @movie} %></li>
+          <% unless review.comment.nil? || review.comment.empty? %>
+            <li><%= render partial: 'reviews/show', locals: {review: review, movie: @movie} %></li>
+          <% end %>
         <% end %>
       </ul>
     </div>
