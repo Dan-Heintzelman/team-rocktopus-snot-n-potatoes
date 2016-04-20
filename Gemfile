@@ -28,13 +28,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 
 
-
 # Add frontend frameworks here (bootstrap/react)
 gem 'react-rails', '~> 1.6.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'jquery-ui-rails'
 gem 'font-awesome-sass'
+
+gem 'rails_12factor', group: :production
 
 
 
