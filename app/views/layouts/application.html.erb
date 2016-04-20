@@ -3,9 +3,10 @@
 <head>
   <title>TeamRocktopusSnotNPotatoes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'homepage', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
   <!-- Bootstrap header -->
@@ -20,6 +21,11 @@
        <%=image_tag("potato.png", class: 'potato')%>
        <%=image_tag("Drawing.png", class: 'logo')%>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><%= link_to 'Home', root_path %></li>
