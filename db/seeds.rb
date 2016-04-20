@@ -5,7 +5,8 @@ require 'json'
 
 API_KEY = 'e6a7d7c4dac181db7ea598c2d15343e1'
 
-  User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
+  User.create!(username: 'Penelope', password: 'pen', email: 'pen@pen.com')
+  User.create(username: 'user', password: 'password', email: 'user@user.com')
 
   all_array = Imdb::Top250.new.movies
   movies = []
@@ -43,7 +44,7 @@ end
 
 
   20.times { User.create(username: Faker::Name.first_name, password:'password', email: Faker::Internet.email) }
-  500.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10), comment: Faker::Lorem.paragraph) }
+  1000.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10), comment: Faker::Lorem.paragraph) }
   100.times { Vote.create(user: User.all.sample, review: Review.all.sample, helpful: [true, false].sample)}
 
-  500.times { Favorite.create(user:User.all.sample, movie: Movie.all.sample)}
+  1000.times { Favorite.create(user:User.all.sample, movie: Movie.all.sample)}
