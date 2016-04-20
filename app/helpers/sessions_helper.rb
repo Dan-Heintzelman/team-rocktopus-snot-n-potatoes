@@ -22,4 +22,9 @@ module SessionsHelper
   def authenticate!
     redirect_to login_path unless logged_in?
   end
+
+  def admin
+    true
+    #redirect_to root_path #unless current_user.username == 'Penelope'
+  end
 end
