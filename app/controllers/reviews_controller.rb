@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate!, only: [:create]
 
   def create
-    params[:review] = {rating: params[:rating], comment: params[:review][:comment]}
+    # params[:review] = {rating: params[:rating], comment: params[:review][:comment]}
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.create(review_params)
     @review.user = current_user
