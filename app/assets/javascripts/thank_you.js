@@ -9,6 +9,9 @@ $(document).ready(function(){
       console.log('ajaxed')
       $('#movie_title').val("");
       $('.hidden').removeClass('hidden');
+    }).fail(function(){
+      console.log("Error creating movie")
+      $('.hidden2').removeClass('hidden2')
     });
   })
 })
