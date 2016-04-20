@@ -3,6 +3,8 @@ require 'net/http'
 require 'imdb'
 require 'json'
 
+API_KEY = 'e6a7d7c4dac181db7ea598c2d15343e1'
+
 def dude
   puts "****** yooooooooo ********"
 end
@@ -54,7 +56,7 @@ movies.each do |movie|
     sleep(0.5)
     uri = URI.parse("https://api.themoviedb.org/3/movie/#{tmdb_id}?api_key=#{API_KEY}")
     response = JSON.parse(Net::HTTP.get(uri))
-    Movie.create!(title: response['title'], photo_path: response['poster_path'], tagline: response['tagline'], overview: response['overview'], genre: response['genres'][0]['name'], release_date: response['release_date'], runtime: response['runtime'])
+    Movie.create!(title: response['title'], photo_path: response['poster_path'], tagline: response['tagline'], overview: response['overview'], genre: response['genres'][0]['name'], release_date: response['release_date'], runtime: response['runtime'], approved: true)
   p response['title']
   end
 

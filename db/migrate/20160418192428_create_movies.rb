@@ -8,6 +8,7 @@ class CreateMovies < ActiveRecord::Migration
       t.string :genre
       t.string :runtime
       t.string :release_date
+      t.boolean :approved, default: false
 
       t.timestamps null: false
     end
