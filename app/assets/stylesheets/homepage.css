@@ -69,6 +69,12 @@ table {
   font-style: italic;
 }
 
+.hidden2 {
+  display: none;
+  font-style: italic;
+  color: red;
+}
+
 .dropdown-toggle {
   margin-top: 9px;
   background-color: black;
@@ -123,4 +129,29 @@ a .fa-thumbs-up:hover ,a .fa-thumbs-down:hover {
 
 .shaded {
   color: rgba(250,193,124, 0.5)
+}
+
+#movie_title {
+  width: 500px;
+}
+
+.fav {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  font-size: 1.2em;
+  color: black;
+  float: right;
+  font-family: 'Verdana', bold;
+}
+
+.fa-heart {
+  display: inline;
+}
+
+.label {
+  font-size: 1.2em;
+  color: black;
 }

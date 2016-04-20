@@ -1,28 +1,24 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features:
 
-Things you may want to cover:
+* Real Movie data pulled using The Movie DB API
 
-* Ruby version
+* User registration
 
-* System dependencies
+* Main movies page shows featured movies, trending movies, top movies, and random genres
 
-* Configuration
+* View movies by genre
 
-* Database creation
+* Suggest new movies for site (admin must approve)
 
-* Database initialization
+* Rate / Review movies
 
-* How to run the test suite
+* Favorite / Unfavorite Movies
 
-* Services (job queues, cache servers, search engines, etc.)
+* User profile page shows favorited movies & reviewed movies
 
-* Deployment instructions
-
-* ...
-
+* 2017 Update: Ability to watch movies
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

@@ -41,8 +41,11 @@ class MoviesController < ApplicationController
     if request.xhr?
       @movie = Movie.create(params[:movie])
       p params["title"]
-      add_one_movie(params["title"])
-      render nothing: true
+      if add_one_movie(params["title"])
+        render nothing: true
+      else
+        render :status => 400
+      end
     else
 
     end

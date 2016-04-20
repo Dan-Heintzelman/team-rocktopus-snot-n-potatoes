@@ -1,3 +1,4 @@
+
 <div class="container text-center">
 
   <br>
@@ -14,33 +15,33 @@
         <h3>Hot Pototato or Snot Potato?</h3>
         <ul>
 
-          <li>Number of Users Favorited: <%=@movie.favorites.length%></li>
+          <li><span class='label'>Favorited By:</span><%=@movie.favorites.length%> users</li>
 
           <!-- logic for if a movie is favorited by user -->
           <li>
             <% if in_favorites?(@movie.id) %>
-              <%= button_to "Unfavorite", {:controller => "favorites", :action => "destroy", :movie_id => @movie.id, :user => current_user}, :method=>:delete %>
+              <%= button_to "💔 Unfavorite", {:controller => "favorites", :action => "destroy", :movie_id => @movie.id, :user => current_user}, :method=>:delete, :class =>'fav' %>
             <% else %>
-              <%= button_to "Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post %>
+              <%= button_to "💖 Favorite", {:controller => "favorites", :action => "create", :movie_id => @movie.id, :user => current_user}, :method=>:post, :class =>'fav' %>
             <% end %>
           </li>
 
           <!-- average_rating logic -->
-          <li>Average Rating: <%=@movie.average_rating%>
+          <li><span class='label'>Average Rating:</span><%=@movie.average_rating%>
             <% @movie.average_rating.times do %>
             <span><i class="fa fa-star" aria-hidden="true"></i></span>
             <% end %>
 
-          <li>Number of Reviews: <%=@movie.reviews.length%></li>
+          <li><span class='label'>Number of Reviews:</span><%=@movie.reviews.length%></li>
         </ul>
 
 
         <h3>Movie Details</h3>
         <ul>
-          <li><%=@movie.overview%></li>
-          <li>Release Date: <%=@movie.release_date%></li>
-          <li>Genre: <%=@movie.genre%></li>
-          <li>Runtime: <%=@movie.runtime%> minutes</li>
+          <li>"<%=@movie.overview%>"</li><br>
+          <li><span class='label'>Release Date:</span><%= calc_date(@movie.release_date) %></li>
+          <li><span class='label'>Genre:</span><%=@movie.genre%></li>
+          <li><span class='label'>Runtime:</span><%=@movie.runtime%> minutes</li>
         </ul>
       </div>
     </div>
