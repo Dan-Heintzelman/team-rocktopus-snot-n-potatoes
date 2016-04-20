@@ -40,6 +40,8 @@ gem 'font-awesome-sass'
 
 gem 'imdb', '~> 0.8'
 
+# heroku local server
+gem 'puma'
 
 
 # Use Unicorn as the app server
@@ -56,7 +58,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'byebug'
-  gem 'shoulda'
 end
 
 group :development do
