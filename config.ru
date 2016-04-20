@@ -2,3 +2,4 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+Rails.application.config.assets.precompile += %w( homepage.css)

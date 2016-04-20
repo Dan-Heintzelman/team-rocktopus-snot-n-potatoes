@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 require 'imdb'
 require 'json'
-require_relative './api.rb'
+# require_relative './api.rb'
 
 module MoviesHelper
   def calc_date(release_date)

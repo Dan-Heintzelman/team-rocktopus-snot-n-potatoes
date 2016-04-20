@@ -107,6 +107,30 @@ table {
   text-align: left;
 }
 
+.fa-thumbs-up, .fa-thumbs-down {
+  font-size: 2em;
+}
+
+.fa-thumbs-up, .fa-thumbs-down {
+  color: rgb(250,193,124);
+  /*250, 193, 124*/
+}
+
+.review-table > td {
+  padding-right: 8px;
+
+}
+
+a .fa-thumbs-up:hover ,a .fa-thumbs-down:hover {
+  color: black;
+  /*250, 193, 124*/
+}
+
+
+.shaded {
+  color: rgba(250,193,124, 0.5)
+}
+
 #movie_title {
   width: 500px;
 }
@@ -131,4 +155,3 @@ table {
   font-size: 1.2em;
   color: black;
 }
-
