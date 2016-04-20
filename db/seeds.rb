@@ -4,7 +4,10 @@ require 'imdb'
 require 'json'
 
 
-  User.create(username: 'user', password: 'password', email: 'user@user.com')
+
+  User.find_or_create_by(username: 'dan', password: 'dan', email: 'dan@dan.com')
+  User.find_or_create_by(username: 'Penelope', password: 'pen', email: 'pen@pen.com')
+  User.find_or_create_by(username: 'user', password: 'password', email: 'user@user.com')
 
   all_array = Imdb::Top250.new.movies
   movies = []
