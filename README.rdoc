@@ -2,6 +2,8 @@
 
 Features:
 
+* Real Movie data pulled using The Movie DB API
+
 * User registration
 
 * Main movies page shows featured movies, trending movies, top movies, and random genres
@@ -15,6 +17,8 @@ Features:
 * Favorite / Unfavorite Movies
 
 * User profile page shows favorited movies & reviewed movies
+
+* 2017 Update: Ability to watch movies
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
