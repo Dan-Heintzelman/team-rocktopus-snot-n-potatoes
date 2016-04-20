@@ -15,6 +15,18 @@ class VotesController < ApplicationController
     end
   end
 
+  def update
+    @vote = Vote.find(params[:vote_id])
+    @review = Review.find(params[:review_id])
+    @vote.update(helpful: params[:helpful])
+    if @vote.save
+      redirect_to @review.movie
+    else
+      @errors = @vote.errors
+      render 'movies/show'
+    end
+  end
+
   private
   def vote_params
     params.require(:vote).permit(:helpful)

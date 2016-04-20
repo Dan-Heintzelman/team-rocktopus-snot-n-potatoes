@@ -1,20 +1,30 @@
 <div class='reviews'>
   <table>
+
     <tr>
+    <tr class="review-table">
     <% if logged_in? %>
-      <% if review.has_voted_by?(@current_user) %>
-        <% user_vote = Vote.find_by(user: @current_user, review: review) %>
+      <% if review.has_voted_by?(current_user) %>
+        <% user_vote = Vote.find_by(user: current_user, review: review) %>
         <% if user_vote.helpful == true %>
-          <td><% link_to '<i class="fa fa-thumbs-up shaded" aria-hidden="true"></i>' %></td>
-          <td></td>
-          <td><i class="fa fa-thumbs-down" aria-hidden="true"></i></td>
+          <td>Review was helpful?</td>
+          <td><%= raw('<i class="fa fa-thumbs-up " aria-hidden="true"></i>') %></td>
+          <td><%= review.up_votes %></td>
+          <td><%= link_to raw('<i class="fa fa-thumbs-down shaded" aria-hidden="true"></i>'), {:controller => "votes", :action => "update", :review_id => review.id, :user => current_user, helpful: false, vote_id: user_vote.id}, method: :put %></td>
+          <td><%= review.down_votes %></td>
         <% else %>
-          <td><i class="fa fa-thumbs-up" aria-hidden="true"></i></td>
-          <td><i class="fa fa-thumbs-down shaded" aria-hidden="true"></i></td>
+          <td>Review was helpful?</td>
+          <td><%= link_to raw('<i class="fa fa-thumbs-up shaded" aria-hidden="true"></i>'), {:controller => "votes", :action => "update", :review_id => review.id, :user => current_user, helpful: true, vote_id: user_vote.id}, method: :put %></td>
+          <td><%= review.up_votes %></td>
+          <td><%= raw('<i class="fa fa-thumbs-down" aria-hidden="true"></i>') %></td>
+          <td><%= review.down_votes %></td>
         <% end %>
       <% else  %>
-        <td><%= link_to '<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>',{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: true}, :method=> :post %></td>
-        <td><%= link_to '<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>',{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: false}, :method=> :post %></td>
+        <td>Review was helpful?</td>
+        <td><%= link_to raw('<i class="vote fa fa-thumbs-up" aria-hidden="true"></i>'), {:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: true}, :method=> :post %></td>
+        <td><%= review.up_votes %></td>
+        <td><%= link_to raw('<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>'),{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: false}, :method=> :post %></td>
+        <td><%= review.down_votes %></td>
       <% end %>
     <% end %>
 
@@ -23,9 +33,3 @@
     </tr>
   </table>
 </div>
-
-
-<i class="fa fa-thumbs-up" aria-hidden="true"></i>
-<i class="fa fa-thumbs-up shaded" aria-hidden="true"></i>
-<i class="fa fa-thumbs-down" aria-hidden="true"></i>
-<i class="fa fa-thumbs-down shaded" aria-hidden="true"></i>
