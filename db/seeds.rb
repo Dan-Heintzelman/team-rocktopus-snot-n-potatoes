@@ -3,7 +3,7 @@ require 'net/http'
 require 'imdb'
 require 'json'
 
-API_KEY = 'e6a7d7c4dac181db7ea598c2d15343e1'
+
 
   User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
 
