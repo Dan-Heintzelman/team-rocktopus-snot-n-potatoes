@@ -43,14 +43,14 @@ movies.each do |movie|
     movie = "Before+Sunrise"
   elsif movie == "The+Wages+of+Fear" || movie == "The+Battle+of+Algiers" || movie == "Yip+Man"
   else
-    uri = URI.parse(URI.escape("https://api.themoviedb.org/3/search/movie?query=#{movie}&api_key=#{API_KEY}"))
+    uri = URI.parse(URI.escape("https://api.themoviedb.org/3/search/movie?query=#{movie}&api_key=#{ENV["API_KEY"]}"))
     response = Net::HTTP.get(uri)
     json_array << response
 
     response = JSON.parse(response)
     tmdb_id = response["results"][0]['id']
     sleep(0.5)
-    uri = URI.parse("https://api.themoviedb.org/3/movie/#{tmdb_id}?api_key=#{API_KEY}")
+    uri = URI.parse("https://api.themoviedb.org/3/movie/#{tmdb_id}?api_key=#{ENV["API_KEY"]}")
     response = JSON.parse(Net::HTTP.get(uri))
     Movie.create!(title: response['title'], photo_path: response['poster_path'], tagline: response['tagline'], overview: response['overview'], genre: response['genres'][0]['name'], release_date: response['release_date'], runtime: response['runtime'])
   p response['title']
