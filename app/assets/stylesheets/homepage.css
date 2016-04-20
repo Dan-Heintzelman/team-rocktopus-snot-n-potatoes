@@ -74,13 +74,13 @@ table {
 }
 
 
-.btn-primary, .btn-primary:active, .btn-primary:visited {
+.btn-primary, .btn-primary:active, .btn-primary:visited,  .btn-primary:focus {
     background: transparent;
     border: none;
     color: #777777;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .open >.btn-primary.dropdown-toggle {
   background: transparent;
   border: none;
   color: white;
