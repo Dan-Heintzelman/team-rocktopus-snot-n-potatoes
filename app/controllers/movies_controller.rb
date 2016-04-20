@@ -1,8 +1,6 @@
 class MoviesController < ApplicationController
   include MoviesHelper
-  before_action :authenticate!, except: [:show_by_genre, :index, :show]
-  # before_action :admin, only: [:approve]
-
+  before_action :authenticate!, only: [:create, :approve, :new, :destroy]
 
   def index
     @movies = Movie.all
