@@ -5,6 +5,11 @@ require 'json'
 require_relative './api.rb'
 
 module MoviesHelper
+  def calc_date(release_date)
+    date = DateTime.parse(release_date)
+    formatted = date.strftime('%b %d, %Y')
+  end
+
   def random_genre
     genres = ["Comedy", "Action", "Romance", "Drama", "Horror", "Adventure", "Animation", "Crime", "Fantasy", "Mystery", "Western", "Thriller"]
     genres.sample(1)
@@ -25,12 +30,13 @@ module MoviesHelper
 
         if response['tagline']
           Movie.create!(title: response['title'], photo_path: response['poster_path'], tagline: response['tagline'], overview: response['overview'], genre: response['genres'][0]['name'], release_date: response['release_date'], runtime: response['runtime'])
+            return true
         else
           @errors = ['Valid title, however that is not a movie. Perhaps it is a television show or an indie film that nobody watched.']
         end
       else
         @errors = ['You have entered an invalid title. Please try again.']
       end
-
+    return false
   end
 end
