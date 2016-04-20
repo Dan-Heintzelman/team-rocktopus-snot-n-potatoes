@@ -13,7 +13,7 @@
        </ul>
      </div>
    <% end %>
-    <%= f.radio_button(:rating, 1) %>
+    <%= f.radio_button(:rating, 1)  %>
     <%= label_tag(1) %>
     <%= f.radio_button(:rating, 2) %>
     <%= label_tag(2) %>
@@ -21,7 +21,7 @@
     <%= label_tag(3) %>
     <%= f.radio_button(:rating, 4) %>
     <%= label_tag(4) %>
-    <%= f.radio_button(:rating, 5) %>
+    <%= f.radio_button(:rating, 5, checked: true) %>
     <%= label_tag(5) %>
     <%= f.radio_button(:rating, 6) %>
     <%= label_tag(6) %>
