@@ -1,9 +1,12 @@
-<% @movies_to_approve.each do |movie| %>
-  <p><%= movie.title%></p>
-        <a href="/movies/<%= movie.id %>"><img src="https://image.tmdb.org/t/p/w500/<%= movie.photo_path %>" width="200px" height="300px" style="width:40%" class="img-responsive" alt="Image"></a>
-<%= button_to "Approve", {:controller => "movies", :action => "update", :approved => true, :id => movie.id}, :method => :patch %>
-<%= button_to "Delete", {:controller => "movies", :action => "destroy", :id => movie.id}, :method => :delete %>
-<% end %>
-
-<!-- button changes approved: true -->
-
+<div class="container-fluid bg-3 text-center">
+  <% @movies_to_approve.each do |movie| %>
+  <div class="row">
+    <div class="col-sm-3">
+      <p><%= movie.title%></p>
+            <a href="/movies/<%= movie.id %>"><img src="https://image.tmdb.org/t/p/w500/<%= movie.photo_path %>" class="img-responsive favorites" alt="Image"></a>
+      <%= button_to "Approve", {:controller => "movies", :action => "update", :approved => true, :id => movie.id}, :method => :patch %>
+      <%= button_to "Delete", {:controller => "movies", :action => "destroy", :id => movie.id}, :method => :delete %>
+    </div>
+  <% end %>
+  </div><br>
+</div>
