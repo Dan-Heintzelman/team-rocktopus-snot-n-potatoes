@@ -6,10 +6,13 @@ resources :movies do
   resources :favorites, only: [:create, :destroy]
 end
 
-resources :reviews, only: [:destroy]
+resources :reviews, only: [:destroy] do
+  resources :votes, only: [:create, :update]
+end
 
 get '/movies/genre/:genre', to: 'movies#show_by_genre', as: 'movie_genres'
 
+# post '/reviews/:id/votes'
 
 root 'movies#index'
 

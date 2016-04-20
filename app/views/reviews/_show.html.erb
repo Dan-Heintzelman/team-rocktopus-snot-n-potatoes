@@ -1,8 +1,29 @@
 <div class='reviews'>
   <table>
     <tr>
+      <% if review.has_voted_by?(current_user) %>
+        <% user_vote = Vote.find_by(user: current_user, review: review) %>
+        <% if user_vote.helpful == true %>
+          <td><% link_to '<i class="fa fa-thumbs-up shaded" aria-hidden="true"></i>' %></td>
+          <td></td>
+          <td><i class="fa fa-thumbs-down" aria-hidden="true"></i></td>
+        <% else %>
+          <td><i class="fa fa-thumbs-up" aria-hidden="true"></i></td>
+          <td><i class="fa fa-thumbs-down shaded" aria-hidden="true"></i></td>
+        <% end %>
+      <% else  %>
+        <td><%= link_to '<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>',{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: true}, :method=> :post %></td>
+        <td><%= link_to '<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>',{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: false}, :method=> :post %></td>
+      <% end %>
+
       <td class='rating'><%= review.rating %></td>
       <td class='review-comment'><%= review.comment %></td>
     </tr>
   </table>
 </div>
+
+
+<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+<i class="fa fa-thumbs-up shaded" aria-hidden="true"></i>
+<i class="fa fa-thumbs-down" aria-hidden="true"></i>
+<i class="fa fa-thumbs-down shaded" aria-hidden="true"></i>
