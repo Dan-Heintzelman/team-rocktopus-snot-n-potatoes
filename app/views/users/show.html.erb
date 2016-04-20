@@ -1,8 +1,8 @@
 <div class="container-fluid bg-3 text-center">
   <h1>Welcome, <%= @user.username %></h1>
 
+  <!-- all movies favorited by current user -->
   <h3>Favorites</h3><br>
-
   <div class="row">
     <% @user.favorited_movies.each do |fav| %>
       <div class="col-sm-3">
@@ -12,8 +12,8 @@
     <% end %>
   </div><br>
 
+  <!-- all movies reviewed by current user -->
   <h3>Reviewed</h3><br>
-
   <div class="container-fluid bg-3 text-center">
     <% @user.reviewed_movies.each do |rev| %>
       <div class="col-sm-3">
