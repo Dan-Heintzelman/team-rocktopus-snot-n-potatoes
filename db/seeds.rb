@@ -3,11 +3,15 @@ require 'net/http'
 require 'imdb'
 require 'json'
 
+  User.destroy_all
+  Movie.destroy_all
+  Review.destroy_all
+  Favorite.destroy_all
+  Vote.destroy_all
 
-
-  User.find_or_create_by(username: 'dan', password: 'dan', email: 'dan@dan.com')
-  User.find_or_create_by(username: 'Penelope', password: 'pen', email: 'pen@pen.com')
-  User.find_or_create_by(username: 'user', password: 'password', email: 'user@user.com')
+  User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
+  User.create!(username: 'Penelope', password: 'pen', email: 'pen@pen.com')
+  User.create!(username: 'user', password: 'password', email: 'user@user.com')
 
   all_array = Imdb::Top250.new.movies
   movies = []
