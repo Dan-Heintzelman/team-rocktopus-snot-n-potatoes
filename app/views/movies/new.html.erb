@@ -1,14 +1,19 @@
-<h1>Submit New Movie for Snot 'N Potatoes</h1>
+<div class="container-fluid bg-3 text-center">
+  <h2>Want to see a new movie on Snot 'N Potatoes?</h2>
 
-<div class="movie-form">
-  <%= form_for :movie, url: movies_path do |f| %>
+  <div class="movie-form">
+    <%= form_for :movie, url: movies_path do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <br>
 
-  <%= f.submit "Submit For Approval!", :class => 'submit-approval' %>
+    <%= f.submit "Submit", :class => 'submit-approval' %>
 
-  <% end %>
+    <% end %>
+  </div>
+  <br>
+
+  <p class='hidden'> Thank you for your submission. Your movie will be reviewed shortly. </p>
 </div>
-
-<p class='hidden'> Thank you for your submission. Your movie will be reviewed shortly. </p>
