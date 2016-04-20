@@ -66,6 +66,7 @@ table {
 
 .hidden  {
   display:none;
+  font-style: italic;
 }
 
 .dropdown-toggle {
@@ -99,3 +100,4 @@ table {
 .left-align {
   text-align: left;
 }
+

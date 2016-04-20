@@ -1,4 +1,4 @@
-<%= form_for :review, url: movie_reviews_path(@movie), method: :post do |f| %>
+<%= form_for [@movie, @review || Review.new] do |f| %>
 
     <% if @errors %>
      <div>
@@ -13,31 +13,28 @@
        </ul>
      </div>
    <% end %>
-    <%= radio_button_tag(:rating, 1) %>
+    <%= f.radio_button(:rating, 1) %>
     <%= label_tag(1) %>
-    <%= radio_button_tag(:rating, 2) %>
+    <%= f.radio_button(:rating, 2) %>
     <%= label_tag(2) %>
-    <%= radio_button_tag(:rating, 3) %>
+    <%= f.radio_button(:rating, 3) %>
     <%= label_tag(3) %>
-    <%= radio_button_tag(:rating, 4) %>
+    <%= f.radio_button(:rating, 4) %>
     <%= label_tag(4) %>
-    <%= radio_button_tag(:rating, 5) %>
+    <%= f.radio_button(:rating, 5) %>
     <%= label_tag(5) %>
-    <%= radio_button_tag(:rating, 6) %>
+    <%= f.radio_button(:rating, 6) %>
     <%= label_tag(6) %>
-    <%= radio_button_tag(:rating, 7) %>
+    <%= f.radio_button(:rating, 7) %>
     <%= label_tag(7) %>
-    <%= radio_button_tag(:rating, 8) %>
+    <%= f.radio_button(:rating, 8) %>
     <%= label_tag(8) %>
-    <%= radio_button_tag(:rating, 9) %>
+    <%= f.radio_button(:rating, 9) %>
     <%= label_tag(9) %>
-    <%= radio_button_tag(:rating, 10) %>
+    <%= f.radio_button(:rating, 10) %>
     <%= label_tag(10) %>
     <br>
     <%=f.text_area :comment %>
     <br>
     <%=f.submit "Review!" %>
 <% end %>
-
-
-
