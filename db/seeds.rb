@@ -62,6 +62,8 @@ movies.each do |movie|
 1500.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10), comment: Faker::Lorem.paragraph) }
 100.times { Vote.create(user: User.all.sample, review: Review.all.sample, helpful: [true, false].sample)}
 
+500.times { Favorite.create(user:User.all.sample, movie: Movie.all.sample)}
+
 #add favorite seeds
 end
 
