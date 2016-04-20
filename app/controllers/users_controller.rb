@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:vote_id])
+		@user = User.find(params[:id])
 		@favorites = @user.favorited_movies.shuffle[0..4]
 	end
 
