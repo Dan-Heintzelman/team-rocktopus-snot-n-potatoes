@@ -3,16 +3,16 @@ require 'net/http'
 require 'imdb'
 require 'json'
 
-ActiveRecord::Base.establish_connection
-ActiveRecord::Base.connection.tables.each do |table|
-  next if table == 'schema_migrations'
-
-  # MySQL and PostgreSQL
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
-
-  # SQLite
-  # ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
-end
+# ActiveRecord::Base.establish_connection
+# ActiveRecord::Base.connection.tables.each do |table|
+#   next if table == 'schema_migrations'
+#
+#   # MySQL and PostgreSQL
+#   ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+#
+#   # SQLite
+#   # ActiveRecord::Base.connection.execute("DELETE FROM #{table}")
+# end
 
   User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
   User.create!(username: 'Penelope', password: 'pen', email: 'pen@pen.com')
