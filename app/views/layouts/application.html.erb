@@ -23,7 +23,12 @@
           <li><%= link_to 'Home', root_path %></li>
           <% if logged_in? %>
 
+
             <li><%= link_to 'Profile', user_path(current_user) %></li>
+            <li><%= link_to 'Suggest a Movie', new_movie_path %></li>
+            <% if current_user.username == "Penelope" %>
+              <li><%= link_to 'Pending Approvals', movie_pending_approvals_path %></li>
+            <% end %>
 
           <% end %>
           <li >
@@ -44,7 +49,6 @@
               <li><%= link_to "Western", movie_genres_path("western")%></li>
             </ul>
           </li>
-
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>

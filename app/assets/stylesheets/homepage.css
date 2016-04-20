@@ -62,3 +62,17 @@ table {
   height: 100px;
   overflow: hidden;
 }
+
+.hidden  {
+  display:none;
+}
+
+.dropdown-toggle {
+  margin-top: 9px;
+  background-color: black;
+}
+
+.btn-primary {
+  background: #0099cc;
+  color: #ffffff;
+}

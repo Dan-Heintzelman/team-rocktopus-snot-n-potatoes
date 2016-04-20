@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   include MoviesHelper
   before_action :authenticate!, except: [:show_by_genre, :index, :show]
+  # before_action :admin, only: [:approve]
 
 
   def index
@@ -26,9 +27,37 @@ class MoviesController < ApplicationController
     @movies = Movie.categorize(@genre)
   end
 
+  def approve
+    # puts current_user
+    # puts current_user.username
+    # if current_user.username == 'Penelope'
+      @movies_to_approve = Movie.where(approved: false)
+    # else
+    #   redirect_to root_path
+    # end
+  end
+
   def create
-    add_one_movie(params["imdb_id"])
-    redirect_to movies_path
+    if request.xhr?
+      @movie = Movie.create(params[:movie])
+      p params["title"]
+      add_one_movie(params["title"])
+      render nothing: true
+    else
+
+    end
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.update(approved: params[:approved])
+    redirect_to movie_pending_approvals_path
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to movie_pending_approvals_path
   end
 
   private

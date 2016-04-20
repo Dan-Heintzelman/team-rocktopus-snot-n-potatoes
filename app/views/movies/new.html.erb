@@ -1,12 +1,14 @@
-<h1>Add New Moooooovie Yo</h1>
+<h1>Submit New Movie for Snot 'N Potatoes</h1>
 
 <div class="movie-form">
   <%= form_for :movie, url: movies_path do |f| %>
 
-  <%= label_tag "imdb_id" %>
-  <%= text_field_tag("imdb_id") %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-  <%= f.submit "Do it" %>
+  <%= f.submit "Submit For Approval!", :class => 'submit-approval' %>
 
   <% end %>
 </div>
+
+<p class='hidden'> Thank you for your submission. Your movie will be reviewed shortly. </p>
