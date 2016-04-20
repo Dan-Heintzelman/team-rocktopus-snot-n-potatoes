@@ -2,6 +2,7 @@
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
+  padding: 0.5em;
 }
 
 .navbar a {
@@ -62,3 +63,41 @@ table {
   height: 100px;
   overflow: hidden;
 }
+
+.hidden  {
+  display:none;
+  font-style: italic;
+}
+
+.dropdown-toggle {
+  margin-top: 9px;
+  background-color: black;
+}
+
+
+.btn-primary, .btn-primary:active, .btn-primary:visited,  .btn-primary:focus {
+    background: transparent;
+    border: none;
+    color: #777777;
+}
+
+.btn-primary:hover, .open >.btn-primary.dropdown-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.logo {
+  height: 50%;
+  padding: 0.8em;
+}
+
+.form-container {
+  margin: auto;
+  padding: 2em;
+}
+
+.left-align {
+  text-align: left;
+}
+

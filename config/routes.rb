@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+get '/movies/pending-approvals', to: 'movies#approve', as: 'movie_pending_approvals'
 
 resources :movies do
   resources :reviews, only: [:index, :create]
@@ -13,6 +14,8 @@ end
 get '/movies/genre/:genre', to: 'movies#show_by_genre', as: 'movie_genres'
 
 # post '/reviews/:id/votes'
+
+
 
 root 'movies#index'
 

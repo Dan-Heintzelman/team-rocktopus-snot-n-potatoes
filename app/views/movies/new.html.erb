@@ -1,12 +1,19 @@
-<h1>Add New Moooooovie Yo</h1>
+<div class="container-fluid bg-3 text-center">
+  <h2>Want to see a new movie on Snot 'N Potatoes?</h2>
 
-<div class="movie-form">
-  <%= form_for :movie, url: movies_path do |f| %>
+  <div class="movie-form">
+    <%= form_for :movie, url: movies_path do |f| %>
 
-  <%= label_tag "imdb_id" %>
-  <%= text_field_tag("imdb_id") %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <br>
 
-  <%= f.submit "Do it" %>
+    <%= f.submit "Submit", :class => 'submit-approval' %>
 
-  <% end %>
+    <% end %>
+  </div>
+  <br>
+
+  <p class='hidden'> Thank you for your submission. Your movie will be reviewed shortly. </p>
 </div>

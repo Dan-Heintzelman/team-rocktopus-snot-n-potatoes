@@ -3,8 +3,10 @@
 <head>
   <title>TeamRocktopusSnotNPotatoes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'homepage', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
   <!-- Bootstrap header -->
@@ -17,13 +19,24 @@
           <span class="icon-bar"></span>
         </button>
        <%=image_tag("potato.png", class: 'potato')%>
+       <%=image_tag("Drawing.png", class: 'logo')%>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li><%= link_to 'Home', root_path %></li>
           <% if logged_in? %>
 
+
             <li><%= link_to 'Profile', user_path(current_user) %></li>
+            <li><%= link_to 'Suggest a Movie', new_movie_path %></li>
+            <% if current_user.username == "Penelope" %>
+              <li><%= link_to 'Pending Approvals', movie_pending_approvals_path %></li>
+            <% end %>
 
           <% end %>
           <li >
@@ -44,7 +57,6 @@
               <li><%= link_to "Western", movie_genres_path("western")%></li>
             </ul>
           </li>
-
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
