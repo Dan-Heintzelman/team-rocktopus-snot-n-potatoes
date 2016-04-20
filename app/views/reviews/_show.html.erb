@@ -19,7 +19,6 @@
             <td><%= raw('<i class="fa fa-thumbs-down" aria-hidden="true"></i>') %></td>
             <td><%= review.down_votes %></td>
           <% end %>
-        <% end %>
       <% else  %>
         <td>Review was helpful?</td>
         <td><%= link_to raw('<i class="vote fa fa-thumbs-up" aria-hidden="true"></i>'), {:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: true}, :method=> :post %></td>
@@ -27,6 +26,7 @@
         <td><%= link_to raw('<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>'),{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: false}, :method=> :post %></td>
         <td><%= review.down_votes %></td>
       <% end %>
+    <% end %>
 
       <td class='rating'><%= review.rating %></td>
       <td class='review-comment'><%= review.comment %></td>
