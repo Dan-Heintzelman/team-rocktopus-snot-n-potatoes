@@ -5,6 +5,7 @@ require 'json'
 
 API_KEY = 'e6a7d7c4dac181db7ea598c2d15343e1'
 
+  User.create!(username: 'dan', password: 'dan', email: 'dan@dan.com')
   User.create!(username: 'Penelope', password: 'pen', email: 'pen@pen.com')
   User.create(username: 'user', password: 'password', email: 'user@user.com')
 
@@ -42,9 +43,11 @@ movies.each do |movie|
 #add favorite seeds
 end
 
+  20.times { Review.create(user: User.first, movie: Movie.all.sample, rating: rand(10), comment: 'THIS IS AWESOME') }
+  10.times { Favorite.create(user: User.first, movie: Movie.all.sample) }
 
-  20.times { User.create(username: Faker::Name.first_name, password:'password', email: Faker::Internet.email) }
+  40.times { User.create(username: Faker::Name.first_name, password:'password', email: Faker::Internet.email) }
   1000.times { Review.create(user: User.all.sample, movie: Movie.all.sample, rating: rand(10), comment: Faker::Lorem.paragraph) }
-  100.times { Vote.create(user: User.all.sample, review: Review.all.sample, helpful: [true, false].sample)}
+  1000.times { Vote.create(user: User.all.sample, review: Review.all.sample, helpful: [true, false].sample)}
 
-  1000.times { Favorite.create(user:User.all.sample, movie: Movie.all.sample)}
+  1000.times { Favorite.create(user:User.all.sample, movie: Movie.all.sample) }
