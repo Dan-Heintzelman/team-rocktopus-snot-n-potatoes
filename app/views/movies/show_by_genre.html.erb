@@ -2,6 +2,7 @@
   <h3><%= @genre %> Movies</h3><br>
   <div class="row">
 
+    <!-- movies based on genre from movies controller / show_by_genre -->
     <% @movies.each do |mov| %>
       <div class="col-sm-3">
         <p><%= mov.title%></p>
