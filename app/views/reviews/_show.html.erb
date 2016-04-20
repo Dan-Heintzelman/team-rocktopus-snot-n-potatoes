@@ -12,7 +12,7 @@
           <td><i class="fa fa-thumbs-down shaded" aria-hidden="true"></i></td>
         <% end %>
       <% else  %>
-        <td><%= link_to '<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>',{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: true}, :method=> :post %></td>
+        <td><%= link_to raw('<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>'), {:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: true}, :method=> :post %></td>
         <td><%= link_to '<i class="vote fa fa-thumbs-down" aria-hidden="true"></i>',{:controller => "votes", :action => "create", :review_id => review.id, :user => current_user, helpful: false}, :method=> :post %></td>
       <% end %>
 
